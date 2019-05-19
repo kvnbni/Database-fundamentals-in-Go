@@ -32,7 +32,7 @@ func main() {
 	reader = bufio.NewReader(os.Stdin)
 	password, err1 := reader.ReadString('\n')
 	if err1 != nil {
-		log.Fatal(err)
+		log.Fatal(err1)
 	}
 	username = strings.Replace(username, "\n", "", -1)
 	password = strings.Replace(password, "\n", "", -1)
@@ -58,7 +58,7 @@ func main() {
 	exampleStringToStoreInDb := "Test string"
 	_, err4 := sqlHandler.Exec("INSERT INTO random_strings (comments) VALUES (?);", exampleStringToStoreInDb) //? is a place holder.
 	if err4 != nil {
-		log.Fatal(err3)
+		log.Fatal(err4)
 	}
 
 	// Read from the table
